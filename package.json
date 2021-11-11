@@ -1,5 +1,5 @@
 {
-  "homepage": "https://EmmanuelORivera.github.io/Portafolio2",
+  "homepage": "https://EmmanuelORivera.github.io/Portfolio",
   "name": "portafolio2",
   "version": "0.1.0",
   "private": true,
@@ -10,6 +10,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
