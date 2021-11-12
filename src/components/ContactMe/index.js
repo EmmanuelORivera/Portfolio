@@ -90,18 +90,16 @@ const ContactMe = () => {
         </ContactInfo>
         <ContactForm>
           <SectionTitle>Contact me</SectionTitle>
-          <Form name="contact" method="POST" data-netlify="true">
+          <form name="contact" method="POST">
             <input type="hidden" name="form-name" value="contact" />
             <label htmlFor="name">Name:</label>
-            <InputText type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" />
             <label htmlFor="email">Email:</label>
-            <InputText type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" />
             <label htmlFor="message">Message:</label>
-            <textarea name="message" id="message" />
-            <WrapperPrimaryButton>
-              <PrimaryButton type="submit">Send</PrimaryButton>
-            </WrapperPrimaryButton>
-          </Form>
+            <textarea name="message" id="message" required />
+            <input type="submit" value="Send" />
+          </form>
         </ContactForm>
       </FormContainer>
     </Container>
