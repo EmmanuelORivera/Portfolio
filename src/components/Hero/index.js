@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as MERN } from "../../img/MERN-Mobile.svg";
 import profile from "../../img/profile.jpeg";
+import { PrimaryButton } from "../shared/SharedComponents";
 
 const Container = styled.div``;
 const LeftSide = styled.div`
@@ -47,21 +48,6 @@ const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 20px;
-`;
-const PrimaryButton = styled.button`
-  flex-basis: 2;
-  cursor: pointer;
-  background-color: #b5266b;
-  border: none;
-  color: white;
-  padding: 0.8rem 1rem;
-  font-size: 1rem;
-  border-radius: 12px;
-  transition: all ease 0.3s;
-  &:hover,
-  &:focus {
-    background-color: #821b4c;
-  }
 `;
 const SecondaryButton = styled(PrimaryButton)`
   background-color: #434653;
