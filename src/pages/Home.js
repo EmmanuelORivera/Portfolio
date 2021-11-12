@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AboutMe from "../components/AboutMe";
 import Hero from "../components/Hero";
+import MyWork from "../components/MyWork";
 import Navbar from "../components/Navbar";
 
 const Container = styled.div`
@@ -20,6 +21,7 @@ const Home = () => {
       <Navbar></Navbar>
       <Hero></Hero>
       <AboutMe />
+      <MyWork />
     </Container>
   );
 };

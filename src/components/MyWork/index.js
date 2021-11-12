@@ -1,0 +1,19 @@
+import React from "react";
+import {
+  Container,
+  SectionWrapper,
+  SectionTitle,
+} from "../shared/SharedComponents";
+import ProjectCards from "./ProjectCard";
+const MyWork = () => {
+  return (
+    <Container>
+      <SectionWrapper>
+        <SectionTitle>My Work</SectionTitle>
+        <ProjectCards />
+      </SectionWrapper>
+    </Container>
+  );
+};
+
+export default MyWork;
