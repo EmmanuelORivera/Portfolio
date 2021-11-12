@@ -12,7 +12,7 @@ import { ReactComponent as PhoneIcon } from "../../img/phone-call.svg";
 
 const LightContainer = styled(Container)`
   color: black;
-  background-color: #f2f2f2;
+  background-color: ${({ theme }) => theme.primaryColor200};
   z-index: 2;
   position: relative;
 `;
@@ -24,7 +24,7 @@ const ContactInfo = styled.div`
     width: 100%;
     margin: 1em auto;
     height: 1px;
-    background-color: #aaa;
+    background-color: ${({ theme }) => theme.primaryColor300};
     border-radius: 20px;
   }
 `;
@@ -42,38 +42,32 @@ const IconWrapper = styled.div`
   align-items: center;
 `;
 
-const Form = styled.form``;
 const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 0.5em;
-`;
-const ContactForm = styled.div``;
-const InputText = styled.input`
-  margin-top: 10px;
-  padding: 0.5em;
-  border-radius: 8px;
-  outline: none;
-  border: 0.1px solid #8d8d8d;
-  background-color: white;
+
+  input,
+  textarea {
+    margin-top: 10px;
+    padding: 0.5em;
+    border-radius: 8px;
+    outline: none;
+    border: 0.1px solid ${({ theme }) => theme.borderColor800};
+    background-color: white;
+  }
 `;
 const TextArea = styled.textarea`
   height: 150px;
   resize: none;
-  margin-top: 10px;
-  padding: 0.5em;
-  border-radius: 8px;
-  outline: none;
-  border: 0.1px solid #8d8d8d;
-  background-color: white;
 `;
 const SendButton = styled(PrimaryButton)`
   align-self: center;
 `;
 
 const PinkBackground = styled.div`
-  background-color: #b5266b;
+  background-color: ${({ theme }) => theme.primaryButtonColor};
   height: 400px;
   width: 100%;
   clip-path: polygon(0 100%, 100% 55%, 100% 0, 82% 26%, 0 0);
@@ -108,21 +102,19 @@ const ContactMe = () => {
                 <p>+52-639-101-71-86</p>
               </ContactWrapper>
             </ContactInfo>
-            <ContactForm>
-              <SectionTitle>Contact me</SectionTitle>
-              <Form name="contact" method="post">
-                <input type="hidden" name="form-name" value="contact" />
-                <InputWrapper>
-                  <label>Your Name:</label>
-                  <InputText type="text" name="name" />
-                  <label>Your Email:</label>
-                  <InputText type="email" name="email" />
-                  <label>Message: </label>
-                  <TextArea name="message"></TextArea>
-                  <SendButton type="submit">Send</SendButton>
-                </InputWrapper>
-              </Form>
-            </ContactForm>
+            <SectionTitle>Contact me</SectionTitle>
+            <form name="contact" method="post">
+              <input type="hidden" name="form-name" value="contact" />
+              <InputWrapper>
+                <label>Your Name:</label>
+                <input type="text" name="name" />
+                <label>Your Email:</label>
+                <input type="email" name="email" />
+                <label>Message: </label>
+                <TextArea name="message"></TextArea>
+                <SendButton type="submit">Send</SendButton>
+              </InputWrapper>
+            </form>
           </SectionWrapper>
         </LightContainer>
       </MainContainer>

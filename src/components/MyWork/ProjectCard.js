@@ -28,7 +28,7 @@ const ProjectTitle = styled(SectionTitle)`
 const ProjectTextDescription = styled.p``;
 
 const ProjectContainer = styled.div`
-  background-color: #f2f2f2;
+  background-color: ${({ theme }) => theme.primaryColor200};
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 1.5em;
@@ -42,7 +42,7 @@ const GoToPage = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(0, 0, 0, 0.2);
+  background-color: ${({ theme }) => theme.hoverBackgroundColor};
   z-index: 3;
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@ const Icon = styled.div`
   margin: 15px;
   transition: all 0.5 ease;
   &:hover {
-    background-color: #f2f2f2;
+    background-color: ${({ theme }) => theme.primaryColor200};
     transform: scale(1.1);
   }
 `;

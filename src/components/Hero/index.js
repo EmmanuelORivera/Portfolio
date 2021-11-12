@@ -50,10 +50,10 @@ const ButtonsContainer = styled.div`
   gap: 20px;
 `;
 const SecondaryButton = styled(PrimaryButton)`
-  background-color: #434653;
+  background-color: ${({ theme }) => theme.secondaryButtonColor};
   &:hover,
   &:focus {
-    background-color: #2e3039;
+    background-color: ${({ theme }) => theme.secondaryButtonHoverColor};
   }
 `;
 const Hero = () => {

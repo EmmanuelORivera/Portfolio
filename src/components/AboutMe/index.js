@@ -25,7 +25,7 @@ const Description2 = styled.p`
 
 const Description3 = styled.p`
   font-weight: 600;
-  color: #a9adc1;
+  color: ${({ theme }) => theme.primaryColor700};
 `;
 const AboutMe = () => {
   return (
