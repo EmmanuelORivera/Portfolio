@@ -1,20 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-
-const Container = styled.div`
-  background-color: #2e3039;
-  border-radius: 8px;
-`;
-const AboutMeWrapper = styled.div`
-  width: 85%;
-  margin: 0 auto;
-  padding: 1em;
-`;
-const Title = styled.h2`
-  font-size: 1.31rem;
-  font-weight: 500;
-  text-align: center;
-`;
+import {
+  Container,
+  SectionWrapper,
+  SectionTitle,
+} from "../shared/SharedComponents";
 
 const Description1 = styled.p`
   font-weight: 400;
@@ -40,8 +30,8 @@ const Description3 = styled.p`
 const AboutMe = () => {
   return (
     <Container>
-      <AboutMeWrapper>
-        <Title>About me</Title>
+      <SectionWrapper>
+        <SectionTitle>About me</SectionTitle>
         <Description1>
           I'm interested in this technologies because:
         </Description1>
@@ -62,7 +52,7 @@ const AboutMe = () => {
         <Description3>
           It is flexible when you try to scale your database.{" "}
         </Description3>
-      </AboutMeWrapper>
+      </SectionWrapper>
     </Container>
   );
 };
