@@ -90,7 +90,7 @@ const ContactMe = () => {
         </ContactInfo>
         <ContactForm>
           <SectionTitle>Contact me</SectionTitle>
-          <Form name="contact" method="post">
+          <Form name="contact" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
             <label htmlFor="name">Name:</label>
             <InputText type="text" name="name" id="name" />
