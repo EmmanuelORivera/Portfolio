@@ -90,15 +90,26 @@ const ContactMe = () => {
         </ContactInfo>
         <ContactForm>
           <SectionTitle>Contact me</SectionTitle>
-          <form name="contact" method="POST">
+          <form name="contact" method="post">
             <input type="hidden" name="form-name" value="contact" />
-            <label htmlFor="name">Name:</label>
-            <input type="text" name="name" id="name" />
-            <label htmlFor="email">Email:</label>
-            <input type="email" name="email" id="email" />
-            <label htmlFor="message">Message:</label>
-            <textarea name="message" id="message" required />
-            <input type="submit" value="Send" />
+            <p>
+              <label>
+                Your Name: <input type="text" name="name" />
+              </label>
+            </p>
+            <p>
+              <label>
+                Your Email: <input type="email" name="email" />
+              </label>
+            </p>
+            <p>
+              <label>
+                Message: <textarea name="message"></textarea>
+              </label>
+            </p>
+            <p>
+              <button type="submit">Send</button>
+            </p>
           </form>
         </ContactForm>
       </FormContainer>
