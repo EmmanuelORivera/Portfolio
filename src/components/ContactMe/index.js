@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { PrimaryButton, SectionTitle } from "../shared/SharedComponents";
+import { SectionTitle } from "../shared/SharedComponents";
 import { ReactComponent as EmailIcon } from "../../img/mail.svg";
 import { ReactComponent as GithubIcon } from "../../img/github.svg";
 import { ReactComponent as PhoneIcon } from "../../img/phone-call.svg";
@@ -44,25 +44,25 @@ const IconWrapper = styled.div`
   align-items: center;
 `;
 
-const Form = styled.form`
-  & > * {
-    margin-bottom: 15px;
-  }
-`;
+// const Form = styled.form`
+//   & > * {
+//     margin-bottom: 15px;
+//   }
+// `;
 const ContactForm = styled.div``;
-const InputText = styled.input`
-  margin-top: 10px;
-  padding: 0.5em;
-  border-radius: 8px;
-  outline: none;
-  border: 0.1px solid #8d8d8d;
-  background-color: white;
-`;
+// const InputText = styled.input`
+//   margin-top: 10px;
+//   padding: 0.5em;
+//   border-radius: 8px;
+//   outline: none;
+//   border: 0.1px solid #8d8d8d;
+//   background-color: white;
+// `;
 
-const WrapperPrimaryButton = styled.div`
-  display: flex;
-  justify-content: center;
-`;
+// const WrapperPrimaryButton = styled.div`
+//   display: flex;
+//   justify-content: center;
+// `;
 const ContactMe = () => {
   return (
     <Container>
