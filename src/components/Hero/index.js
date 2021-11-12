@@ -33,7 +33,7 @@ const ProfileImageContainer = styled.div`
   border-radius: 8px;
   overflow: hidden;
   height: 8rem;
-  width: 5.5rem;
+  width: 7rem;
   margin: 0 auto 1.5em;
 `;
 const ProfileImage = styled.img`
@@ -49,6 +49,7 @@ const ButtonsContainer = styled.div`
   gap: 20px;
 `;
 const PrimaryButton = styled.button`
+  flex-basis: 2;
   cursor: pointer;
   background-color: #b5266b;
   border: none;
