@@ -7,7 +7,7 @@ import {
 import ProjectCards from "./ProjectCard";
 const MyWork = () => {
   return (
-    <Container>
+    <Container id="my-work">
       <SectionWrapper>
         <SectionTitle>My Work</SectionTitle>
         <ProjectCards />

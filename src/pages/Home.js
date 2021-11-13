@@ -9,8 +9,8 @@ import { MainContainer } from "../components/shared/SharedComponents";
 const Home = () => {
   return (
     <>
+      <Navbar />
       <MainContainer>
-        <Navbar />
         <Hero />
         <AboutMe />
         <MyWork />

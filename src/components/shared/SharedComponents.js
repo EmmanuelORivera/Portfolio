@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MainContainer = styled.div`
   width: 90%;
@@ -26,7 +26,7 @@ export const SectionWrapper = styled.div`
   padding: 1em;
 `;
 
-export const PrimaryButton = styled.button`
+export const basePrimaryButton = css`
   flex-basis: 2;
   cursor: pointer;
   background-color: #b5266b;
@@ -36,6 +36,7 @@ export const PrimaryButton = styled.button`
   font-size: 1rem;
   border-radius: 12px;
   transition: all ease 0.3s;
+  text-decoration: none;
   &:hover,
   &:focus {
     background-color: #821b4c;

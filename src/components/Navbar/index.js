@@ -1,38 +1,43 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import { ReactComponent as HamburgerIcon } from "../../img/Hamburger-Menu.svg";
+import Burger from "../Burger";
+import Menu from "../Menu";
+import { useOnClickOutside } from "../../hooks";
 
-const Container = styled.nav`
+const StickyContainer = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: ${({ theme }) => theme.primaryColor800};
+`;
+const NavbarWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 2em 0;
+  width: 90%;
+  margin: 0 auto;
 `;
 const LeftSide = styled.div``;
 const RightSide = styled.div``;
 
-const NavigationBar = styled.div``;
-const NavigationBarList = styled.ul`
-  display: flex;
-  list-style-type: none;
-  display: none;
-`;
-const NavigationBarItem = styled.li``;
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+
+  useOnClickOutside(node, () => setOpen(false));
   return (
-    <Container>
-      <LeftSide>Emmanuel Ochoa Rivera</LeftSide>
-      <RightSide>
-        <HamburgerIcon />
-        <NavigationBar>
-          <NavigationBarList>
-            <NavigationBarItem>About Me</NavigationBarItem>
-            <NavigationBarItem>My Work</NavigationBarItem>
-            <NavigationBarItem>Contact Me</NavigationBarItem>
-          </NavigationBarList>
-        </NavigationBar>
-      </RightSide>
-    </Container>
+    <StickyContainer>
+      <NavbarWrapper>
+        <LeftSide>Emmanuel Ochoa Rivera</LeftSide>
+        <RightSide>
+          <div ref={node}>
+            <Menu open={open} setOpen={setOpen}></Menu>
+            <Burger open={open} setOpen={setOpen}></Burger>
+          </div>
+        </RightSide>
+      </NavbarWrapper>
+    </StickyContainer>
   );
 };
 

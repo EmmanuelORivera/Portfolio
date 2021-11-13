@@ -33,6 +33,7 @@ const ProjectContainer = styled.div`
   overflow: hidden;
   margin-bottom: 1.5em;
   position: relative;
+  z-index: 1;
 `;
 
 const GoToPage = styled.div`

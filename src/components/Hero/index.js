@@ -2,9 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as MERN } from "../../img/MERN-Mobile.svg";
 import profile from "../../img/profile.jpeg";
-import { PrimaryButton } from "../shared/SharedComponents";
+import { basePrimaryButton } from "../shared/SharedComponents";
+import { Link } from "react-scroll";
 
-const Container = styled.div``;
+const Container = styled.div`
+  margin: 2em 0;
+`;
 const LeftSide = styled.div`
   text-align: center;
 `;
@@ -44,10 +47,14 @@ const ProfileImage = styled.img`
 `;
 const RightSide = styled.div``;
 const ButtonsContainer = styled.div`
-  margin-top: 1.5rem;
+  margin: 2em 0;
   display: flex;
   justify-content: center;
   gap: 20px;
+`;
+
+const PrimaryButton = styled(Link)`
+  ${basePrimaryButton}
 `;
 const SecondaryButton = styled(PrimaryButton)`
   background-color: ${({ theme }) => theme.secondaryButtonColor};
@@ -56,6 +63,7 @@ const SecondaryButton = styled(PrimaryButton)`
     background-color: ${({ theme }) => theme.secondaryButtonHoverColor};
   }
 `;
+const SecondaryLink = styled(SecondaryButton, Link)``;
 const Hero = () => {
   return (
     <Container>
@@ -74,8 +82,17 @@ const Hero = () => {
       </LeftSide>
       <RightSide></RightSide>
       <ButtonsContainer>
-        <PrimaryButton>Contact me</PrimaryButton>
-        <SecondaryButton>Check my work</SecondaryButton>
+        <PrimaryButton href="#contact-me">Contact me</PrimaryButton>
+        <SecondaryLink
+          activeClass="active"
+          to="my-work"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={100}
+        >
+          Check my work
+        </SecondaryLink>
       </ButtonsContainer>
     </Container>
   );

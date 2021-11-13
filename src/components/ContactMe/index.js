@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import {
+  basePrimaryButton,
   Container,
   MainContainer,
   SectionWrapper,
 } from "../shared/SharedComponents";
-import { PrimaryButton, SectionTitle } from "../shared/SharedComponents";
+import { SectionTitle } from "../shared/SharedComponents";
 import { ReactComponent as EmailIcon } from "../../img/mail.svg";
 import { ReactComponent as GithubIcon } from "../../img/github.svg";
 import { ReactComponent as PhoneIcon } from "../../img/phone-call.svg";
+import { Link } from "react-scroll";
 
 const LightContainer = styled(Container)`
   color: black;
@@ -35,11 +37,8 @@ const ContactWrapper = styled.div`
   align-items: center;
 `;
 const IconWrapper = styled.div`
-  display: flex;
   height: 24px;
   width: 24px;
-  border-radius: 50%;
-  align-items: center;
 `;
 
 const InputWrapper = styled.div`
@@ -62,7 +61,8 @@ const TextArea = styled.textarea`
   height: 150px;
   resize: none;
 `;
-const SendButton = styled(PrimaryButton)`
+const SendButton = styled.button`
+  ${basePrimaryButton}
   align-self: center;
 `;
 
@@ -81,7 +81,7 @@ const ContactMe = () => {
       <MainContainer style={{ marginBottom: "2em" }}>
         <LightContainer>
           <SectionWrapper>
-            <SectionTitle>My Info</SectionTitle>
+            <SectionTitle id="contact-me">My Info</SectionTitle>
             <ContactInfo>
               <ContactWrapper>
                 <IconWrapper>
@@ -93,7 +93,10 @@ const ContactMe = () => {
                 <IconWrapper>
                   <GithubIcon />
                 </IconWrapper>
-                <p>https://github.com/EmmanuelORivera</p>
+                <p>
+                  https://github.com/
+                  <span style={{ display: "block" }}>EmmanuelORivera</span>
+                </p>
               </ContactWrapper>
               <ContactWrapper>
                 <IconWrapper>
