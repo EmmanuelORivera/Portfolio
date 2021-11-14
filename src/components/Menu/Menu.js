@@ -1,27 +1,31 @@
 import React from "react";
 import { StyledMenu } from "./Menu.styled";
+import { Link } from "react-scroll";
 
-const Menu = ({ open }) => {
+const Menu = ({ open, setOpen }) => {
+  const handleClick = (e) => {
+    setOpen((prevOpen) => !prevOpen);
+  };
   return (
     <StyledMenu open={open}>
-      <a href="/">
-        <span role="img" aria-label="about us">
-          &#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
+      <Link to="home" offset={-100} onClick={handleClick}>
+        <span role="img" aria-label="home">
+          &#9757;
         </span>
-        About us
-      </a>
-      <a href="/">
-        <span role="img" aria-label="price">
-          &#x1f4b8;
+        Home
+      </Link>
+      <Link to="my-work" onClick={handleClick}>
+        <span role="img" aria-label="my work">
+          &#128119;
         </span>
-        Pricing
-      </a>
-      <a href="/">
+        My work
+      </Link>
+      <Link to="contact-me" offset={-100} onClick={handleClick}>
         <span role="img" aria-label="contact">
           &#x1f4e9;
         </span>
-        Contact
-      </a>
+        Contact me
+      </Link>
     </StyledMenu>
   );
 };

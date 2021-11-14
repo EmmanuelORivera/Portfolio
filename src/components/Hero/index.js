@@ -66,7 +66,7 @@ const SecondaryButton = styled(PrimaryButton)`
 const SecondaryLink = styled(SecondaryButton, Link)``;
 const Hero = () => {
   return (
-    <Container>
+    <Container id="home">
       <LeftSide>
         <Title>
           Mern stack web <Span>developer</Span>
@@ -82,13 +82,22 @@ const Hero = () => {
       </LeftSide>
       <RightSide></RightSide>
       <ButtonsContainer>
-        <PrimaryButton href="#contact-me">Contact me</PrimaryButton>
+        <PrimaryButton
+          activeClass="active"
+          to="contact-me"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={100}
+        >
+          Contact me
+        </PrimaryButton>
         <SecondaryLink
           activeClass="active"
           to="my-work"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-100}
           duration={100}
         >
           Check my work
