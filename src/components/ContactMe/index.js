@@ -10,7 +10,6 @@ import { SectionTitle } from "../shared/SharedComponents";
 import { ReactComponent as EmailIcon } from "../../img/mail.svg";
 import { ReactComponent as GithubIcon } from "../../img/github.svg";
 import { ReactComponent as PhoneIcon } from "../../img/phone-call.svg";
-import { Link } from "react-scroll";
 
 const LightContainer = styled(Container)`
   color: black;

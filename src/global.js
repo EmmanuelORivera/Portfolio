@@ -7,11 +7,14 @@ export const GlobalStyles = createGlobalStyle`
 
 body,
 html {
-  /* height:100%; */
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   background-color: ${({ theme }) => theme.primaryColor800};
   color: ${({ theme }) => theme.primaryColor100};
+
+  @media(min-width:${({ theme }) => theme.mobile}){
+    font-size:24px;
+  }
 }
 `;
