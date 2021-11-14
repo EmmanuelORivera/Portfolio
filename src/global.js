@@ -13,7 +13,7 @@ html {
   background-color: ${({ theme }) => theme.primaryColor800};
   color: ${({ theme }) => theme.primaryColor100};
 
-  @media(min-width:${({ theme }) => theme.mobile}){
+  @media ${({ theme }) => theme.mobileMediaQuery} {
     font-size:24px;
   }
 }

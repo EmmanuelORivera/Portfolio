@@ -8,11 +8,22 @@ import { Link } from "react-scroll";
 const Container = styled.div`
   margin: 2em 0;
 `;
+const HeroWrapper = styled.div`
+  @media ${({ theme }) => theme.mobileMediaQuery} {
+    display: flex;
+    justify-content: space-around;
+  }
+`;
 const LeftSide = styled.div`
   text-align: center;
+  @media ${({ theme }) => theme.mobileMediaQuery} {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
 `;
 const Title = styled.h1`
-  font-size: 1.31rem;
+  font-size: ${({ theme }) => theme.titleFontSize};
   font-weight: 600;
   text-transform: uppercase;
 `;
@@ -20,8 +31,8 @@ const Span = styled.span`
   display: block;
 `;
 const SubTitle = styled.p`
+  font-size: 0.833rem;
   letter-spacing: 3px;
-  margin-bottom: 1.5em;
   &::before {
     content: "";
     display: block;
@@ -38,7 +49,7 @@ const ProfileImageContainer = styled.div`
   overflow: hidden;
   height: 8rem;
   width: 7rem;
-  margin: 0 auto 1.5em;
+  margin: 1.5em auto;
 `;
 const ProfileImage = styled.img`
   object-fit: fill;
@@ -47,10 +58,10 @@ const ProfileImage = styled.img`
 `;
 const RightSide = styled.div``;
 const ButtonsContainer = styled.div`
-  margin: 2em 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 1.5em;
+  margin: 2.5em 0;
 `;
 
 const PrimaryButton = styled(Link)`
@@ -67,20 +78,23 @@ const SecondaryLink = styled(SecondaryButton, Link)``;
 const Hero = () => {
   return (
     <Container id="home">
-      <LeftSide>
-        <Title>
-          Mern stack web <Span>developer</Span>
-        </Title>
-        <SubTitle>Bringing Ideas To Life</SubTitle>
-        <ProfileImageContainer>
-          <ProfileImage
-            src={profile}
-            alt="This is my profile image"
-          ></ProfileImage>
-        </ProfileImageContainer>
-        <MERN />
-      </LeftSide>
-      <RightSide></RightSide>
+      <HeroWrapper>
+        <LeftSide>
+          <Title>
+            Mern stack web <Span>developer</Span>
+          </Title>
+          <SubTitle>Bringing Ideas To Life</SubTitle>
+          <MERN />
+        </LeftSide>
+        <RightSide>
+          <ProfileImageContainer>
+            <ProfileImage
+              src={profile}
+              alt="This is my profile image"
+            ></ProfileImage>
+          </ProfileImageContainer>
+        </RightSide>
+      </HeroWrapper>
       <ButtonsContainer>
         <PrimaryButton
           activeClass="active"
