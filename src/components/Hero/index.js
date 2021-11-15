@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as MERN } from "../../img/MERN-Mobile.svg";
 import profile from "../../img/profile.jpeg";
-import { basePrimaryButton } from "../shared/SharedComponents";
+import { basePrimaryButton, SectionWrapper } from "../shared/SharedComponents";
 import { Link } from "react-scroll";
 
 const Container = styled.div`
@@ -78,45 +78,47 @@ const SecondaryLink = styled(SecondaryButton, Link)``;
 const Hero = () => {
   return (
     <Container id="home">
-      <HeroWrapper>
-        <LeftSide>
-          <Title>
-            Mern stack web <Span>developer</Span>
-          </Title>
-          <SubTitle>Bringing Ideas To Life</SubTitle>
-          <MERN />
-        </LeftSide>
-        <RightSide>
-          <ProfileImageContainer>
-            <ProfileImage
-              src={profile}
-              alt="This is my profile image"
-            ></ProfileImage>
-          </ProfileImageContainer>
-        </RightSide>
-      </HeroWrapper>
-      <ButtonsContainer>
-        <PrimaryButton
-          activeClass="active"
-          to="contact-me"
-          spy={true}
-          smooth={true}
-          offset={0}
-          duration={100}
-        >
-          Contact me
-        </PrimaryButton>
-        <SecondaryLink
-          activeClass="active"
-          to="my-work"
-          spy={true}
-          smooth={true}
-          offset={-100}
-          duration={100}
-        >
-          Check my work
-        </SecondaryLink>
-      </ButtonsContainer>
+      <SectionWrapper>
+        <HeroWrapper>
+          <LeftSide>
+            <Title>
+              Mern stack web <Span>developer</Span>
+            </Title>
+            <SubTitle>Bringing Ideas To Life</SubTitle>
+            <MERN />
+          </LeftSide>
+          <RightSide>
+            <ProfileImageContainer>
+              <ProfileImage
+                src={profile}
+                alt="This is my profile image"
+              ></ProfileImage>
+            </ProfileImageContainer>
+          </RightSide>
+        </HeroWrapper>
+        <ButtonsContainer>
+          <PrimaryButton
+            activeClass="active"
+            to="contact-me"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={100}
+          >
+            Contact me
+          </PrimaryButton>
+          <SecondaryLink
+            activeClass="active"
+            to="my-work"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={100}
+          >
+            Check my work
+          </SecondaryLink>
+        </ButtonsContainer>
+      </SectionWrapper>
     </Container>
   );
 };

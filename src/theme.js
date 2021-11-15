@@ -1,4 +1,4 @@
-const size = { mobile: "576px" };
+const size = { mobile: "576px", desktop: "1100px" };
 
 export const theme = {
   primaryColor100: "white",
@@ -16,4 +16,5 @@ export const theme = {
 
   mobile: `${size.mobile}`,
   mobileMediaQuery: `(min-width:${size.mobile})`,
+  desktopMediaQuery: `(min-width:${size.desktop})`,
 };
