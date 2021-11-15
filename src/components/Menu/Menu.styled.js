@@ -27,6 +27,7 @@ export const StyledMenu = styled.nav`
     color: ${({ theme }) => theme.primaryColor800};
     text-decoration: none;
     transition: color 0.3s linear;
+    cursor: pointer;
 
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 1.5rem;

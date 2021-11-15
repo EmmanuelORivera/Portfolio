@@ -5,6 +5,7 @@ import {
   SectionWrapper,
   SectionTitle,
 } from "../shared/SharedComponents";
+import { columnItems } from "../shared/styles";
 
 const Description1 = styled.p`
   font-weight: 400;
@@ -30,9 +31,7 @@ const Description3 = styled.p`
 
 const Descriptions = styled.div`
   @media ${({ theme }) => theme.desktopMediaQuery} {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    ${columnItems}
   }
 `;
 const DescriptionItem = styled.div`

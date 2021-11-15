@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  basePrimaryButton,
   Container,
   MainContainer,
   SectionWrapper,
@@ -10,6 +9,7 @@ import { SectionTitle } from "../shared/SharedComponents";
 import { ReactComponent as EmailIcon } from "../../img/mail.svg";
 import { ReactComponent as GithubIcon } from "../../img/github.svg";
 import { ReactComponent as PhoneIcon } from "../../img/phone-call.svg";
+import { basePrimaryButton } from "../shared/styles";
 
 const LightContainer = styled(Container)`
   color: black;
@@ -18,7 +18,12 @@ const LightContainer = styled(Container)`
   position: relative;
 `;
 
-const ContactInfo = styled.div`
+const ContactSection = styled(SectionWrapper)`
+  @media ${({ theme }) => theme.desktopMediaQuery} {
+    display: flex;
+  }
+`;
+const LeftSide = styled.div`
   &::after {
     content: "";
     display: block;
@@ -27,6 +32,24 @@ const ContactInfo = styled.div`
     height: 1px;
     background-color: ${({ theme }) => theme.primaryColor300};
     border-radius: 20px;
+  }
+  @media ${({ theme }) => theme.desktopMediaQuery} {
+    & {
+      flex-grow: 1;
+    }
+    &::after {
+      display: none;
+    }
+  }
+`;
+
+const RightSide = styled.div`
+  @media ${({ theme }) => theme.desktopMediaQuery} {
+    & {
+      max-width: 800px;
+      padding: 0 2em;
+      flex-grow: 2;
+    }
   }
 `;
 
@@ -48,8 +71,9 @@ const InputWrapper = styled.div`
 
   input,
   textarea {
+    font-size: 0.7rem;
     margin-top: 10px;
-    padding: 0.5em;
+    padding: 1em;
     border-radius: 8px;
     outline: none;
     border: 0.1px solid ${({ theme }) => theme.borderColor800};
@@ -79,9 +103,9 @@ const ContactMe = () => {
       <PinkBackground />
       <MainContainer style={{ marginBottom: "2em" }}>
         <LightContainer>
-          <SectionWrapper>
-            <SectionTitle id="contact-me">My Info</SectionTitle>
-            <ContactInfo>
+          <ContactSection>
+            <LeftSide>
+              <SectionTitle id="contact-me">Info</SectionTitle>
               <ContactWrapper>
                 <IconWrapper>
                   <EmailIcon />
@@ -103,21 +127,24 @@ const ContactMe = () => {
                 </IconWrapper>
                 <p>+52-639-101-71-86</p>
               </ContactWrapper>
-            </ContactInfo>
-            <SectionTitle>Contact me</SectionTitle>
-            <form name="contact" method="post">
-              <input type="hidden" name="form-name" value="contact" />
-              <InputWrapper>
-                <label>Your Name:</label>
-                <input type="text" name="name" />
-                <label>Your Email:</label>
-                <input type="email" name="email" />
-                <label>Message: </label>
-                <TextArea name="message"></TextArea>
-                <SendButton type="submit">Send</SendButton>
-              </InputWrapper>
-            </form>
-          </SectionWrapper>
+            </LeftSide>
+
+            <RightSide>
+              <SectionTitle>Contact me</SectionTitle>
+              <form name="contact" method="post">
+                <input type="hidden" name="form-name" value="contact" />
+                <InputWrapper>
+                  <label>Your Name:</label>
+                  <input type="text" name="name" />
+                  <label>Your Email:</label>
+                  <input type="email" name="email" />
+                  <label>Message: </label>
+                  <TextArea name="message"></TextArea>
+                  <SendButton type="submit">Send</SendButton>
+                </InputWrapper>
+              </form>
+            </RightSide>
+          </ContactSection>
         </LightContainer>
       </MainContainer>
     </>

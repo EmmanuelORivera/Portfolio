@@ -14,7 +14,7 @@ html {
   color: ${({ theme }) => theme.primaryColor100};
 
   @media ${({ theme }) => theme.mobileMediaQuery} {
-    font-size:24px;
+    font-size:22px;
   }
 }
 `;

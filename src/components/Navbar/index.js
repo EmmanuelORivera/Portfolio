@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Burger from "../Burger";
 import Menu from "../Menu";
 import { useOnClickOutside } from "../../hooks";
+import { SectionWrapper } from "../shared/SharedComponents";
 
 const StickyContainer = styled.nav`
   position: sticky;
@@ -12,9 +13,9 @@ const StickyContainer = styled.nav`
 `;
 const NavbarWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 2em 0;
+  padding: 0;
   width: 90%;
   margin: 0 auto;
 `;
@@ -28,15 +29,17 @@ const Navbar = () => {
   useOnClickOutside(node, () => setOpen(false));
   return (
     <StickyContainer>
-      <NavbarWrapper>
-        <LeftSide>Emmanuel Ochoa Rivera</LeftSide>
-        <RightSide>
-          <div ref={node}>
-            <Menu open={open} setOpen={setOpen}></Menu>
-            <Burger open={open} setOpen={setOpen}></Burger>
-          </div>
-        </RightSide>
-      </NavbarWrapper>
+      <SectionWrapper>
+        <NavbarWrapper>
+          <LeftSide>Emmanuel Ochoa</LeftSide>
+          <RightSide>
+            <div ref={node}>
+              <Menu open={open} setOpen={setOpen}></Menu>
+              <Burger open={open} setOpen={setOpen}></Burger>
+            </div>
+          </RightSide>
+        </NavbarWrapper>
+      </SectionWrapper>
     </StickyContainer>
   );
 };

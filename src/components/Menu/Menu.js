@@ -8,19 +8,40 @@ const Menu = ({ open, setOpen }) => {
   };
   return (
     <StyledMenu open={open}>
-      <Link to="home" offset={-100} onClick={handleClick}>
+      <Link
+        spy={true}
+        smooth={true}
+        duration={500}
+        to="home"
+        offset={-100}
+        onClick={handleClick}
+      >
         <span role="img" aria-label="home">
           &#9757;
         </span>
         Home
       </Link>
-      <Link to="my-work" onClick={handleClick}>
+      <Link
+        spy={true}
+        smooth={true}
+        duration={500}
+        offset={-100}
+        to="my-work"
+        onClick={handleClick}
+      >
         <span role="img" aria-label="my work">
           &#128119;
         </span>
         My work
       </Link>
-      <Link to="contact-me" offset={-100} onClick={handleClick}>
+      <Link
+        spy={true}
+        smooth={true}
+        duration={500}
+        to="contact-me"
+        offset={-100}
+        onClick={handleClick}
+      >
         <span role="img" aria-label="contact">
           &#x1f4e9;
         </span>

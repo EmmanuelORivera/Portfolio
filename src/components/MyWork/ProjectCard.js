@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { projects } from "../../data";
-import { SectionTitle } from "../shared/SharedComponents";
 import { ReactComponent as External } from "../../img/external.svg";
 import { ReactComponent as Github } from "../../img/github.svg";
+import { SectionTitle } from "../shared/SharedComponents";
+import { columnItems } from "../shared/styles";
 
-const Container = styled.div``;
+const Container = styled.div`
+  @media ${({ theme }) => theme.desktopMediaQuery} {
+    ${columnItems}
+  }
+`;
 const ProjectCardImageContainer = styled.div`
   width: 100%;
   height: 10em;
@@ -34,6 +39,9 @@ const ProjectContainer = styled.div`
   margin-bottom: 1.5em;
   position: relative;
   z-index: 1;
+  @media ${({ theme }) => theme.desktopMediaQuery} {
+    max-width: 400px;
+  }
 `;
 
 const GoToPage = styled.div`

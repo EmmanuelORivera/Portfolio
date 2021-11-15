@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as MERN } from "../../img/MERN-Mobile.svg";
+import MernImage from "../../img/mern.png";
 import profile from "../../img/profile.jpeg";
-import { basePrimaryButton, SectionWrapper } from "../shared/SharedComponents";
+import { SectionWrapper } from "../shared/SharedComponents";
 import { Link } from "react-scroll";
+import { basePrimaryButton } from "../shared/styles";
 
 const Container = styled.div`
   margin: 2em 0;
@@ -11,7 +12,8 @@ const Container = styled.div`
 const HeroWrapper = styled.div`
   @media ${({ theme }) => theme.mobileMediaQuery} {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
   }
 `;
 const LeftSide = styled.div`
@@ -20,6 +22,7 @@ const LeftSide = styled.div`
     display: flex;
     flex-direction: column;
     text-align: left;
+    flex-grow: 1/2;
   }
 `;
 const Title = styled.h1`
@@ -37,10 +40,20 @@ const SubTitle = styled.p`
     content: "";
     display: block;
     max-width: 15em;
-    margin: 0 auto 1em;
+    margin: 0 auto 2em;
     height: 1px;
     background-color: white;
     border-radius: 20px;
+  }
+  @media ${({ theme }) => theme.mobileMediaQuery} {
+    & {
+      position: relative;
+    }
+    &::before {
+      position: absolute;
+      top: -1em;
+      width: 100%;
+    }
   }
 `;
 
@@ -50,22 +63,40 @@ const ProfileImageContainer = styled.div`
   height: 8rem;
   width: 7rem;
   margin: 1.5em auto;
+  @media ${({ theme }) => theme.mobileMediaQuery} {
+    height: 10rem;
+    width: 9rem;
+  }
 `;
 const ProfileImage = styled.img`
   object-fit: fill;
   width: 100%;
   height: 100%;
 `;
-const RightSide = styled.div``;
+const RightSide = styled.div`
+  flex-grow: 1;
+`;
 const ButtonsContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 1.5em;
-  margin: 2.5em 0;
+  text-align: center;
+  gap: 0.8em;
+  margin: 2.5em auto;
+  max-width: 250px;
+  @media ${({ theme }) => theme.mobileMediaQuery} {
+    flex-direction: row;
+    max-width: none;
+    gap: 5%;
+  }
 `;
 
 const PrimaryButton = styled(Link)`
   ${basePrimaryButton}
+
+  @media ${({ theme }) => theme.mobileMediaQuery} {
+    width: 15em;
+  }
 `;
 const SecondaryButton = styled(PrimaryButton)`
   background-color: ${({ theme }) => theme.secondaryButtonColor};
@@ -75,6 +106,12 @@ const SecondaryButton = styled(PrimaryButton)`
   }
 `;
 const SecondaryLink = styled(SecondaryButton, Link)``;
+
+const MernImages = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+`;
 const Hero = () => {
   return (
     <Container id="home">
@@ -85,7 +122,9 @@ const Hero = () => {
               Mern stack web <Span>developer</Span>
             </Title>
             <SubTitle>Bringing Ideas To Life</SubTitle>
-            <MERN />
+            <div style={{ width: "100%" }}>
+              <MernImages src={MernImage} alt="icons" />
+            </div>
           </LeftSide>
           <RightSide>
             <ProfileImageContainer>
@@ -102,8 +141,8 @@ const Hero = () => {
             to="contact-me"
             spy={true}
             smooth={true}
-            offset={0}
-            duration={100}
+            offset={-100}
+            duration={500}
           >
             Contact me
           </PrimaryButton>
@@ -113,7 +152,7 @@ const Hero = () => {
             spy={true}
             smooth={true}
             offset={-100}
-            duration={100}
+            duration={500}
           >
             Check my work
           </SecondaryLink>
